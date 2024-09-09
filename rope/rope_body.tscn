@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4ec48pcvcsc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tc6xi"]
+radius = 0.025026
+height = 0.287355
+
+[node name="RopeBody" type="RigidBody3D"]
+axis_lock_angular_y = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142229, 0)
+shape = SubResource("CapsuleShape3D_tc6xi")

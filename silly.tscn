@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://vcibgp7cnqux"]
+[gd_scene load_steps=12 format=3 uid="uid://vcibgp7cnqux"]
 
-[ext_resource type="Texture2D" uid="uid://bn8vf87th3mlx" path="res://icon.svg" id="1_htvfb"]
+[ext_resource type="Texture2D" uid="uid://drxga2qpavxbx" path="res://icon.svg" id="1_htvfb"]
 [ext_resource type="PackedScene" uid="uid://dsvh5xvcuknhl" path="res://guy.tscn" id="2_ue66i"]
+[ext_resource type="PackedScene" uid="uid://b6gs26euomaqt" path="res://rope/rope.tscn" id="3_67rti"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s0lae"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -64,3 +65,6 @@ mesh = SubResource("CylinderMesh_qutwu")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_ue66i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 30.0776)
+
+[node name="Rope" parent="." instance=ExtResource("3_67rti")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05342, 0.322612, 19.5246)

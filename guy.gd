@@ -14,7 +14,7 @@ const gravity = 10
 @onready var camera = $Camera3D
 @onready var pause_menu = $PauseMenu
 
-@onready var ray = $RayCast3D
+#@onready var ray = $RayCast3D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

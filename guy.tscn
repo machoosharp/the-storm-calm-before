@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsvh5xvcuknhl"]
+[gd_scene load_steps=5 format=3 uid="uid://dsvh5xvcuknhl"]
 
 [ext_resource type="Script" path="res://guy.gd" id="1_vftx1"]
+[ext_resource type="PackedScene" uid="uid://bcoek2kh2xj4e" path="res://pause_menu.tscn" id="2_hxtuy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ddq0d"]
 
@@ -18,3 +19,5 @@ mesh = SubResource("CapsuleMesh_hwq37")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21444, 5.70463)
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_hxtuy")]

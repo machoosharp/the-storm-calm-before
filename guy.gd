@@ -3,6 +3,34 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+const TERMINAL_VELOCITY = 100
+
+var mouse_sens = 0.05
+var camera_anglev = 0
+
+const gravity = 10
+
+
+@onready var camera = $Camera3D
+@onready var pause_menu = $PauseMenu
+
+@onready var ray = $RayCast3D
+
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _unhandled_input( event ):
+	if event is InputEventKey and not get_tree().paused:
+		if event.pressed and event.keycode == KEY_ESCAPE:
+			pause_menu.pause()
+
+func _input( event ):
+	if event is InputEventMouseMotion:
+		rotate_y( deg_to_rad( -event.relative.x * mouse_sens ) )
+		var changev =- event.relative.y * mouse_sens
+		if camera_anglev + changev>-45 and camera_anglev + changev<30:
+			camera_anglev += changev
+			camera.rotate_x( deg_to_rad( changev ) )
 
 
 func _physics_process(delta: float) -> void:
